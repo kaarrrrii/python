@@ -37,7 +37,7 @@ class User:
 		test_hash = hashlib.pbkdf2_hmac(
 			'sha256',
 			password.encode('utf-8'),
-			salt,
+			self.__salt,
 			100 # количество прогонов
 			)
 		return test_hash == self.__password_hash
